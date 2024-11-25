@@ -1,0 +1,29 @@
+
+Have 2 different jobs class
+    Priest
+    Wizard
+2 different weapons class
+    Staff
+    Shield
+
+Character and weapons have base hp atk defense mana
+
+Interface
+    Characters
+        EquipAccessory
+        unEquipAccessory
+        PrintStatus
+        Stats
+        GetName
+        levelUp
+        getLevel
+    Accessory
+        GetName
+        GetStatus
+        levelUp
+        getLevel
+
+Class Stats
+
+Start will have only character status
+if get weapon and equip that weapon will + stats from base character stats

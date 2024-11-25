@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Characters wizard = new Class_Wizard("Gandalf",1);
+        Characters priest = new Class_Priest("Alice",1);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Accessory Homa_staff = new Weapon_Staff("Homa",1,new Stats(0,25,0,30));
+        Accessory Eden_staff = new Weapon_Staff("Eden",1,new Stats(10,10,5,30));
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Display stats");
+        wizard.printStatus();
+        priest.printStatus();
+
+        System.out.println("\nEquip accessories to characters\n");
+        wizard.EquipAccessory(Homa_staff);
+        priest.EquipAccessory(Eden_staff);
+        wizard.levelUp();
+        Homa_staff.levelUp();
+        priest.levelUp();
+        Eden_staff.levelUp();
+
+        System.out.println("\nDisplay stats after equipping accessories");
+        wizard.printStatus();
+        priest.printStatus();
+
+        Accessory Exorcisms = new Weapon_Shield("Exorcisms",1,new Stats(20,0,10,25));
+
+        System.out.println("\nDisplay stats after equipping accessories again");
+        priest.unEquipAccessory(Eden_staff);
+        priest.EquipAccessory(Exorcisms);
+        priest.printStatus();
     }
 }
